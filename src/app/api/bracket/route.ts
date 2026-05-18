@@ -9,6 +9,16 @@ function pairNumber(playerId: number): number {
 export async function POST() {
   const groups = ["A", "B"];
 
+  for (const g of groups) {
+    const count = await prisma.player.count({ where: { group: g, active: true } });
+    if (count < 8) {
+      return NextResponse.json(
+        { ok: false, error: `Grupo ${g} tiene ${count} jugadores (faltan ${8 - count}). Necesitas 4 parejas (8 jugadores) en cada grupo antes de generar cruces.` },
+        { status: 400 }
+      );
+    }
+  }
+
   const standings: Record<string, { pairNum: number; pts: number }[]> = {};
 
   for (const g of groups) {

@@ -19,6 +19,7 @@ export default function AdminCuadroPage() {
   const [finals, setFinals] = useState<FinalMatch[]>([]);
   const [generating, setGenerating] = useState(false);
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("/api/matches?phase=final")
@@ -29,12 +30,15 @@ export default function AdminCuadroPage() {
   async function handleGenerate() {
     setGenerating(true);
     setMessage("");
+    setError("");
     const res = await fetch("/api/bracket", { method: "POST" });
     const data = await res.json();
     if (data.ok) {
       setMessage(`Cruces generados: ${data.pairs?.length ?? 0} partidos creados.`);
       const res2 = await fetch("/api/matches?phase=final");
       setFinals(await res2.json());
+    } else {
+      setError(data.error || "Error generando cruces.");
     }
     setGenerating(false);
   }
@@ -57,6 +61,12 @@ export default function AdminCuadroPage() {
       {message && (
         <div style={{ marginBottom: 16, padding: 12, background: "var(--green-soft)", borderRadius: "var(--r)", border: "1px solid var(--green)", fontSize: 13, color: "var(--green-2)" }}>
           ✓ {message}
+        </div>
+      )}
+
+      {error && (
+        <div style={{ marginBottom: 16, padding: 12, background: "rgba(200,80,40,.08)", borderRadius: "var(--r)", border: "1px solid var(--rust)", fontSize: 13, color: "var(--rust)" }}>
+          ⚠ {error}
         </div>
       )}
 
