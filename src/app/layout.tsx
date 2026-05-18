@@ -41,8 +41,8 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="footer wrap">
-            <div>ROLAND GARRULOS &apos;26 · Club Pádel La Boleadora</div>
-            <div>Organiza: Comité Tertulia &amp; Tortilla</div>
+            <div>ROLAND GARRULOS &apos;26</div>
+            <div>Organiza: Club de metrosexuales</div>
           </footer>
           <MobileNav />
         </div>

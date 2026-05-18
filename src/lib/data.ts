@@ -46,7 +46,7 @@ export function pairShort(ids: number[]): string {
 
 export function fullPairName(pairNum: number): string {
   const [a, b] = pairPlayers(pairNum);
-  return `${getPlayer(a).surname} / ${getPlayer(b).surname}`;
+  return `${fullName(a)} / ${fullName(b)}`;
 }
 
 export function shortPairName(pairNum: number): string {
