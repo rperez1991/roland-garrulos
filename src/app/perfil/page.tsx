@@ -1,6 +1,7 @@
 import { loadPlayers, getPlayerMatches, pairNumber, getPlayer } from "@/lib/data";
 import styles from "./page.module.css";
 import Link from "next/link";
+import PlayerSelect from "./PlayerSelect";
 
 export const dynamic = "force-dynamic";
 
@@ -47,21 +48,7 @@ export default async function PerfilPage({
           <h1>{player.name} {player.surname}</h1>
         </div>
         <div className="row wrap-flex">
-          <select
-            className={styles.playerSelect}
-            defaultValue={playerId}
-            onChange={(e) => {
-              if (typeof window !== "undefined") {
-                window.location.href = `/perfil?id=${e.target.value}`;
-              }
-            }}
-          >
-            {players.map((p) => (
-              <option key={p.id} value={p.id}>
-                {p.name} {p.surname} · Pareja {pairNumber(p.id)} · Grupo {p.group}
-              </option>
-            ))}
-          </select>
+          <PlayerSelect players={players} current={playerId} />
         </div>
       </div>
 

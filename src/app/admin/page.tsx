@@ -49,9 +49,6 @@ export default function AdminLoginPage() {
         <button type="submit" className="btn ball" style={{ width: "100%", justifyContent: "center", padding: "12px 16px" }} disabled={loading}>
           {loading ? "Entrando..." : "Entrar al panel →"}
         </button>
-        <div style={{ marginTop: 16, fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink-3)" }}>
-          Contraseña por defecto: admin123
-        </div>
       </form>
     </div>
   );
