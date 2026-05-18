@@ -182,8 +182,7 @@ export default function ReglamentoPage() {
               </tbody>
             </table>
             <p className="muted" style={{ fontSize: 13, marginTop: 12 }}>
-              <strong>Sede:</strong> Club Pádel La Boleadora · 4 pistas.<br />
-              <strong>Organiza:</strong> Comité Tertulia &amp; Tortilla.
+              <strong>Organiza:</strong> Club de metrosexuales.
             </p>
           </div>
         </div>

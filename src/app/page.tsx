@@ -31,7 +31,6 @@ export default async function Home() {
               <span><b>2</b> grupos</span>
               <span><b>4</b> pistas</span>
               <span><b>13</b> Junio</span>
-              <span><b>Club</b> La Boleadora</span>
             </div>
             <div className={styles.actions}>
               <Link href="/cuadro" className="btn ball">
