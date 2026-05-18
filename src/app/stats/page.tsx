@@ -1,6 +1,8 @@
 import { loadPlayers, getPairStats, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 export default async function StatsPage() {
   await loadPlayers();
   const stats = await getPairStats();

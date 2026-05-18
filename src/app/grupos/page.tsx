@@ -2,6 +2,8 @@ import { loadPlayers, getGroupStandings, getGroupMatches, fullPairName } from "@
 import styles from "./page.module.css";
 import { GroupRounds } from "./GroupRounds";
 
+export const dynamic = "force-dynamic";
+
 export default async function GruposPage() {
   await loadPlayers();
   const groups = ["A", "B"];

@@ -1,6 +1,8 @@
 import { loadPlayers, getFinals, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 export default async function CuadroPage() {
   await loadPlayers();
   const finals = await getFinals();

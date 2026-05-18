@@ -2,6 +2,8 @@ import { loadPlayers, getPlayerMatches, pairNumber, getPlayer } from "@/lib/data
 import styles from "./page.module.css";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function PerfilPage({
   searchParams,
 }: {

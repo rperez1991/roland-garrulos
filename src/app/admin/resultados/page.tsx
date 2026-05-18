@@ -2,6 +2,8 @@ import { loadPlayers, getGroupMatches, fullPairName, pairNumber } from "@/lib/da
 import AdminShell from "@/components/AdminShell";
 import styles from "./page.module.css";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminResultadosPage() {
   await loadPlayers();
   const groups = ["A", "B"];
