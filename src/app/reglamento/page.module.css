@@ -1,0 +1,243 @@
+.wrapper {
+  padding-bottom: 64px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.sectionHead {
+  padding: 20px 24px;
+  background: var(--cream-2);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sectionHead h2 {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.number {
+  font-family: var(--font-mono), monospace;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--green);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.body {
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+
+.body p {
+  margin: 0 0 12px;
+}
+
+.body ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.body ul li {
+  padding-left: 4px;
+}
+
+.body ul li::marker {
+  color: var(--ball);
+}
+
+/* Rotación table */
+.rotTable {
+  background: var(--cream);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.rotHeader {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  padding: 10px 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--cream-2);
+  border-bottom: 1px solid var(--line);
+}
+
+.rotRow {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line-2);
+}
+
+.rotRow:last-child {
+  border-bottom: none;
+}
+
+/* Fórmula */
+.formula {
+  background: var(--ink);
+  color: var(--ball);
+  padding: 16px 20px;
+  border-radius: var(--r);
+  margin: 12px 0;
+  text-align: center;
+}
+
+.formula code {
+  font-family: var(--font-mono), monospace;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Puntuación table */
+.ptsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.ptsTable th,
+.ptsTable td {
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 13px;
+  border-bottom: 1px solid var(--line-2);
+}
+
+.ptsTable th {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--cream);
+}
+
+/* Cross table */
+.crossTable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.crossRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.crossCol {
+  padding: 12px;
+  background: var(--cream);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+  font-size: 13px;
+}
+
+/* Bracket flow */
+.bracketFlow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.flowArrow {
+  color: var(--ball);
+  font-size: 18px;
+}
+
+.finalBadge {
+  background: var(--ball);
+  color: var(--ink);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* Match types */
+.matchType {
+  flex: 1;
+  padding: 16px;
+  background: var(--cream);
+  border-radius: var(--r);
+  border: 1px solid var(--line);
+}
+
+.matchTypeTitle {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 8px;
+  letter-spacing: -0.01em;
+}
+
+/* Bola de oro callout */
+.bolaOro {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--ball);
+  border-radius: var(--r);
+  border: 1px solid var(--ball-2);
+}
+
+.bolaOroIcon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.bolaOroText {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.bolaOroText strong {
+  color: var(--ink);
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .crossRow {
+    grid-template-columns: 1fr;
+  }
+}

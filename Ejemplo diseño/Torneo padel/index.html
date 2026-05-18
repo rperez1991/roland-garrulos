@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Roland Garrulos · Torneo de Pádel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- ==================== TOP BAR ==================== -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand" data-go="home">
+        <div class="logo">RG</div>
+        <div>
+          Roland Garrulos
+          <small>Edición '26</small>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#home" data-screen="home" class="active">Inicio</a>
+        <a href="#grupos" data-screen="grupos">Grupos</a>
+        <a href="#cuadro" data-screen="cuadro">Cuadro</a>
+        <a href="#stats" data-screen="stats">Estadísticas</a>
+        <a href="#perfil" data-screen="perfil">Perfil</a>
+        <a href="#admin" data-screen="admin" class="nav-admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ==================== HOME ==================== -->
+    <section class="screen active" id="home">
+      <div class="hero">
+        <div class="hero-bg-text">RG</div>
+        <div class="hero-grid">
+          <div>
+            <div class="h-eyebrow" style="color: var(--ball);">Torneo de pádel · Formato Americano</div>
+            <h2>Roland<br/><em>Garrulos</em> '26</h2>
+            <div class="meta">
+              <span><b>16</b> jugadores</span>
+              <span><b>4</b> grupos</span>
+              <span><b>5</b> días</span>
+              <span><b>20–24</b> Mayo</span>
+              <span><b>Club</b> La Boleadora</span>
+            </div>
+            <div class="actions">
+              <a href="#cuadro" data-screen="cuadro" class="btn ball">Ver cuadro en directo →</a>
+              <a href="#grupos" data-screen="grupos" class="btn ghost" style="border-color: rgba(244,239,226,.3); color: var(--cream);">Clasificación</a>
+            </div>
+          </div>
+          <div>
+            <div class="court-illo">
+              <div class="line"></div>
+              <div class="ball-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-grid">
+        <div class="kpi accent">
+          <div class="label">Fase actual</div>
+          <div class="value">SF</div>
+          <div class="sub">Semifinales · 2 partidos</div>
+        </div>
+        <div class="kpi green-bg">
+          <div class="label">Partido en pista</div>
+          <div class="value">3er set</div>
+          <div class="sub">Q. Cristal / M. Chiquita vs N. Voleas / B. Boleadora</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Líder estadísticas</div>
+          <div class="value">Lola V.</div>
+          <div class="sub">6 partidos · 6 victorias · racha 🔥🔥🔥</div>
+        </div>
+      </div>
+
+      <div class="next-matches">
+        <div>
+          <div class="row" style="margin-bottom:14px;">
+            <div class="h-eyebrow">Hoy en pista</div>
+            <div class="spacer"></div>
+            <span class="mono muted" style="font-size:12px;">Pista 1 · única en uso</span>
+          </div>
+          <div class="match-list" id="match-list"></div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h3>Estado del torneo</h3>
+            <span class="tag green">En curso</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div>
+              <div class="h-eyebrow" style="margin-bottom:4px;">Progreso</div>
+              <div style="height:8px; background: var(--cream-2); border-radius:4px; overflow:hidden;">
+                <div style="height:100%; width:82%; background: var(--green); border-radius:4px;"></div>
+              </div>
+              <div class="row" style="margin-top:6px; justify-content:space-between; font-size:12px; color:var(--ink-3);">
+                <span class="mono">14 / 17 partidos</span>
+                <span class="mono">82%</span>
+              </div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px; font-size:13px;">
+              <div class="row" style="justify-content:space-between;"><span>Grupos jugados</span><b class="mono">12 / 12</b></div>
+              <div class="row" style="justify-content:space-between;"><span>Cuartos</span><b class="mono">2 / 2</b></div>
+              <div class="row" style="justify-content:space-between;"><span>Semifinales</span><b class="mono">1 / 2 ⚡</b></div>
+              <div class="row" style="justify-content:space-between;"><span>Final</span><b class="mono muted">21:30h</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== GRUPOS ==================== -->
+    <section class="screen" id="grupos">
+      <div class="screen-head">
+        <div>
+          <div class="h-eyebrow">Fase de grupos · finalizada</div>
+          <h1>Grupos &amp; clasificación</h1>
+        </div>
+        <div class="row wrap">
+          <span class="tag green">Top 2 clasifica al cuadro</span>
+          <span class="tag">3 rondas · rotación de parejas</span>
+        </div>
+      </div>
+
+      <div class="groups-grid" id="groups-grid"></div>
+
+      <div class="americano-rotation">
+        <div class="row" style="margin-bottom:14px;">
+          <h3>Rotación Americano · Grupo A</h3>
+          <div class="spacer"></div>
+          <span class="mono muted hide-mobile" style="font-size:12px;">Cada jugador juega con los otros 3 del grupo</span>
+        </div>
+        <div class="rotation-tabs">
+          <button class="rotation-tab active">Ronda 1</button>
+          <button class="rotation-tab">Ronda 2</button>
+          <button class="rotation-tab">Ronda 3</button>
+          <button class="rotation-tab" style="opacity:.4">Grupos B · C · D →</button>
+        </div>
+        <div class="rotation-matches" id="rotation-matches"></div>
+      </div>
+    </section>
+
+    <!-- ==================== CUADRO ==================== -->
+    <section class="screen" id="cuadro">
+      <div class="screen-head">
+        <div>
+          <div class="h-eyebrow">Cuadro eliminatorio</div>
+          <h1>El camino al trofeo</h1>
+        </div>
+        <div class="row wrap">
+          <span class="tag green">Top 2 grupos</span>
+          <span class="tag blue">Mejor de 3 sets</span>
+          <span class="tag rust">SF en curso</span>
+        </div>
+      </div>
+
+      <div class="bracket-wrap">
+        <div class="bracket" id="bracket"></div>
+      </div>
+
+      <div style="margin-top: 24px;" class="row wrap">
+        <span class="muted mono" style="font-size:12px;">·</span>
+        <span class="mono muted" style="font-size:12px;">Los 3º y 4º de cada grupo disputan el cuadro de consolación (no mostrado)</span>
+      </div>
+    </section>
+
+    <!-- ==================== STATS ==================== -->
+    <section class="screen" id="stats">
+      <div class="screen-head">
+        <div>
+          <div class="h-eyebrow">Estadísticas individuales</div>
+          <h1>Quién manda en la pista</h1>
+        </div>
+        <div class="row wrap">
+          <span class="tag">Tras 14 partidos</span>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <!-- Partidos ganados -->
+        <div class="leaderboard">
+          <div class="leaderboard-head">
+            <h3>Partidos ganados</h3>
+            <span class="tag green">PG</span>
+          </div>
+          <ol>
+            <li class="top-1"><span class="rank">1</span><div class="who">Lola Vidal<small>La Smasher · Grupo A</small></div><div class="stat">6</div></li>
+            <li class="top-2"><span class="rank">2</span><div class="who">Nuria Voleas<small>La Pinza · Grupo D</small></div><div class="stat">5</div></li>
+            <li class="top-3"><span class="rank">3</span><div class="who">Lucía Paredes<small>La Muralla · Grupo C</small></div><div class="stat">5</div></li>
+            <li><span class="rank">4</span><div class="who">Quique Cristal<small>El Pegapelo · Grupo B</small></div><div class="stat">4</div></li>
+            <li><span class="rank">5</span><div class="who">Manu Chiquita<small>El Bote · Grupo B</small></div><div class="stat">4</div></li>
+            <li><span class="rank">6</span><div class="who">Bea Boleadora<small>Bea-Bomba · Grupo D</small></div><div class="stat">4</div></li>
+          </ol>
+        </div>
+
+        <!-- Juegos a favor -->
+        <div class="leaderboard">
+          <div class="leaderboard-head">
+            <h3>Juegos a favor / contra</h3>
+            <span class="tag blue">JF–JC</span>
+          </div>
+          <ol>
+            <li class="top-1"><span class="rank">1</span><div class="who">Lola Vidal<small>+16 · 48 / 32</small></div><div class="stat">+16</div></li>
+            <li class="top-2"><span class="rank">2</span><div class="who">Quique Cristal<small>+12 · 45 / 33</small></div><div class="stat">+12</div></li>
+            <li class="top-3"><span class="rank">3</span><div class="who">Lucía Paredes<small>+16 · 47 / 31</small></div><div class="stat">+16</div></li>
+            <li><span class="rank">4</span><div class="who">Nuria Voleas<small>+16 · 46 / 30</small></div><div class="stat">+16</div></li>
+            <li><span class="rank">5</span><div class="who">Pepe Saca-Planos<small>+8 · 44 / 36</small></div><div class="stat">+8</div></li>
+            <li><span class="rank">6</span><div class="who">Manu Chiquita<small>+6 · 41 / 35</small></div><div class="stat">+6</div></li>
+          </ol>
+        </div>
+
+        <!-- Rachas -->
+        <div class="leaderboard">
+          <div class="leaderboard-head">
+            <h3>Racha actual</h3>
+            <span class="tag ball">🔥</span>
+          </div>
+          <ol>
+            <li class="top-1">
+              <span class="rank">1</span>
+              <div class="who">Lola Vidal
+                <div class="streak-row">
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                </div>
+              </div>
+              <div class="stat">W6</div>
+            </li>
+            <li class="top-2">
+              <span class="rank">2</span>
+              <div class="who">Pepe Saca-Planos
+                <div class="streak-row">
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                </div>
+              </div>
+              <div class="stat">W5</div>
+            </li>
+            <li class="top-3">
+              <span class="rank">3</span>
+              <div class="who">Nuria Voleas
+                <div class="streak-row">
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot loss"></span>
+                  <span class="streak-dot win"></span>
+                </div>
+              </div>
+              <div class="stat">W1</div>
+            </li>
+            <li>
+              <span class="rank">4</span>
+              <div class="who">Toño Remates
+                <div class="streak-row">
+                  <span class="streak-dot loss"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot win"></span>
+                  <span class="streak-dot loss"></span>
+                </div>
+              </div>
+              <div class="stat">L1</div>
+            </li>
+            <li>
+              <span class="rank">5</span>
+              <div class="who">Berto Ribera
+                <div class="streak-row">
+                  <span class="streak-dot loss"></span>
+                  <span class="streak-dot loss"></span>
+                  <span class="streak-dot loss"></span>
+                </div>
+              </div>
+              <div class="stat">L3</div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="curiosities">
+        <div class="curio dark">
+          <div class="what">Pareja sorpresa del torneo</div>
+          <div class="who">Doble-Pared &amp; Muralla</div>
+          <div class="detail">Dani Contrapared + Lucía Paredes ganaron en cuartos a los 2º de B remontando 0–6 / 7–6 / 7–6.</div>
+        </div>
+        <div class="curio">
+          <div class="what">Partido más largo</div>
+          <div class="who">2h 14min</div>
+          <div class="detail">Cuartos QF2 · 3 sets · 32 juegos disputados.</div>
+        </div>
+        <div class="curio">
+          <div class="what">Set más rápido</div>
+          <div class="who">6–0 en 18'</div>
+          <div class="detail">Lola Vidal &amp; Pepe Saca-Planos en cuartos a Voleas/Boleadora.</div>
+        </div>
+        <div class="curio dark">
+          <div class="what">Madera de oro 🥲</div>
+          <div class="who">Berto Ribera</div>
+          <div class="detail">0 partidos ganados, pero +127 saludos al público. Lo intenta.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PERFIL ==================== -->
+    <section class="screen" id="perfil">
+      <div class="screen-head">
+        <div>
+          <div class="h-eyebrow">Perfil de jugadora</div>
+          <h1>Lola Vidal</h1>
+        </div>
+        <div class="row wrap">
+          <button class="btn ghost sm">← Otro jugador</button>
+        </div>
+      </div>
+
+      <div class="profile">
+        <aside class="profile-card">
+          <div class="avatar">LV</div>
+          <h2>Lola Vidal</h2>
+          <div class="nick">"La Smasher" · Grupo A</div>
+
+          <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:20px;">
+            <span class="tag ball">1ª clasificada</span>
+            <span class="tag" style="background:rgba(244,239,226,.15); color: var(--cream);">Finalista</span>
+          </div>
+
+          <div class="quick-stats">
+            <div class="qs">
+              <div class="v">6/6</div>
+              <div class="l">Partidos</div>
+            </div>
+            <div class="qs">
+              <div class="v">+27</div>
+              <div class="l">Diferencia juegos</div>
+            </div>
+            <div class="qs">
+              <div class="v">W6</div>
+              <div class="l">Racha</div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="profile-detail">
+          <div class="match-history">
+            <div class="match-history-head">
+              <h3>Historial del torneo</h3>
+              <span class="tag green">100% victorias</span>
+            </div>
+            <div id="player-history"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-head">
+              <h3>Mejor compañero/a</h3>
+              <span class="mono muted" style="font-size:11px;">Tras 6 partidos</span>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+              <div style="padding:14px; background: var(--cream); border-radius: var(--r); border:1px solid var(--line);">
+                <div class="h-eyebrow" style="margin-bottom:6px;">Más sintonía 🤝</div>
+                <div style="font-family: var(--f-display); font-size: 22px; font-weight:700; letter-spacing:-0.02em; line-height:1.1;">Pepe Saca-Planos</div>
+                <div class="muted" style="font-size:13px; margin-top:4px;">3 partidos juntos · 3 victorias</div>
+              </div>
+              <div style="padding:14px; background: var(--cream); border-radius: var(--r); border:1px solid var(--line);">
+                <div class="h-eyebrow" style="margin-bottom:6px;">Próximo rival</div>
+                <div style="font-family: var(--f-display); font-size: 22px; font-weight:700; letter-spacing:-0.02em; line-height:1.1;">Ganador SF2</div>
+                <div class="muted" style="font-size:13px; margin-top:4px;">Final · 21:30h · Pista 1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ADMIN: LOGIN ==================== -->
+    <section class="screen" id="admin">
+      <div class="admin-login-screen">
+        <form class="login-card" onsubmit="event.preventDefault(); document.getElementById('admin-pass-hint').style.display='none'; window.goScreen('admin-participantes');">
+          <div class="lock">🔒</div>
+          <h2>Zona Admin</h2>
+          <p>Acceso restringido al comité organizador.</p>
+          <div class="field">
+            <label for="admin-user">Usuario</label>
+            <input id="admin-user" type="text" value="admin" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="admin-pass">Contraseña</label>
+            <input id="admin-pass" type="password" value="••••••" />
+          </div>
+          <button type="submit" class="btn ball">Entrar al panel →</button>
+          <div class="demo-hint" id="admin-pass-hint">Demo: cualquier contraseña funciona</div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==================== ADMIN: PARTICIPANTES ==================== -->
+    <section class="screen" id="admin-participantes">
+      <div class="admin-shell">
+        <aside class="admin-side">
+          <div class="admin-side-head">Panel admin</div>
+          <a href="#admin-participantes" data-screen="admin-participantes" class="active">Participantes <span class="arrow">›</span></a>
+          <a href="#admin-resultados" data-screen="admin-resultados">Resultados <span class="arrow">›</span></a>
+          <a href="#admin-cuadro" data-screen="admin-cuadro">Generar cuadro <span class="arrow">›</span></a>
+          <a href="#home" data-screen="home" style="margin-top:12px; border-top:1px solid var(--line); padding-top:14px;">↩ Salir</a>
+        </aside>
+
+        <div class="admin-main">
+          <div class="admin-section-head">
+            <h2>Participantes &amp; grupos</h2>
+            <div class="row wrap">
+              <div class="search-input">
+                <span class="muted">⌕</span>
+                <input type="text" placeholder="Buscar jugador..." />
+              </div>
+              <button class="btn">+ Añadir jugador</button>
+            </div>
+          </div>
+
+          <table class="players-table">
+            <thead>
+              <tr>
+                <th style="width:40px;">#</th>
+                <th>Jugador</th>
+                <th class="hide-sm">Mote</th>
+                <th>Grupo</th>
+                <th class="hide-sm">Estado</th>
+                <th style="text-align:right;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="admin-players-body"></tbody>
+          </table>
+
+          <div style="margin-top: 20px;" class="row wrap">
+            <button class="btn ghost">↻ Re-sortear grupos</button>
+            <button class="btn ghost">⇣ Exportar CSV</button>
+            <div class="spacer"></div>
+            <span class="mono muted" style="font-size:12px;">16 / 16 jugadores · 4 grupos completos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ADMIN: RESULTADOS ==================== -->
+    <section class="screen" id="admin-resultados">
+      <div class="admin-shell">
+        <aside class="admin-side">
+          <div class="admin-side-head">Panel admin</div>
+          <a href="#admin-participantes" data-screen="admin-participantes">Participantes <span class="arrow">›</span></a>
+          <a href="#admin-resultados" data-screen="admin-resultados" class="active">Resultados <span class="arrow">›</span></a>
+          <a href="#admin-cuadro" data-screen="admin-cuadro">Generar cuadro <span class="arrow">›</span></a>
+          <a href="#home" data-screen="home" style="margin-top:12px; border-top:1px solid var(--line); padding-top:14px;">↩ Salir</a>
+        </aside>
+
+        <div class="admin-main">
+          <div class="admin-section-head">
+            <h2>Editar resultados</h2>
+            <div class="row wrap">
+              <select class="field" style="padding:8px 12px; background: var(--cream); border:1px solid var(--line); border-radius: 999px; font-size:13px;">
+                <option>Grupo A</option><option>Grupo B</option><option>Grupo C</option><option>Grupo D</option>
+                <option>Cuartos</option><option>Semifinales</option><option>Final</option>
+              </select>
+              <button class="btn ball">⇡ Publicar resultados</button>
+            </div>
+          </div>
+
+          <div class="result-editor" id="result-editor"></div>
+
+          <div style="margin-top:18px; padding:14px 16px; background: var(--green-soft); border:1px solid var(--green); border-radius: var(--r); display:flex; align-items:center; gap:10px; font-size:13px; color: var(--green-2);">
+            <span style="font-size:18px;">✓</span>
+            Resultados sincronizados · La clasificación del Grupo A se actualiza automáticamente.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ADMIN: CUADRO ==================== -->
+    <section class="screen" id="admin-cuadro">
+      <div class="admin-shell">
+        <aside class="admin-side">
+          <div class="admin-side-head">Panel admin</div>
+          <a href="#admin-participantes" data-screen="admin-participantes">Participantes <span class="arrow">›</span></a>
+          <a href="#admin-resultados" data-screen="admin-resultados">Resultados <span class="arrow">›</span></a>
+          <a href="#admin-cuadro" data-screen="admin-cuadro" class="active">Generar cuadro <span class="arrow">›</span></a>
+          <a href="#home" data-screen="home" style="margin-top:12px; border-top:1px solid var(--line); padding-top:14px;">↩ Salir</a>
+        </aside>
+
+        <div class="admin-main">
+          <div class="admin-section-head">
+            <h2>Generar cuadro</h2>
+            <div class="row wrap">
+              <span class="tag green">Top 2 por grupo</span>
+              <button class="btn">⚡ Regenerar pairings</button>
+              <button class="btn ball">✓ Confirmar cuadro</button>
+            </div>
+          </div>
+
+          <div class="bracket-gen">
+            <div>
+              <div class="qualifiers-list">
+                <h4>Clasificados — 8 jugadores</h4>
+                <div id="qualifiers-list"></div>
+              </div>
+            </div>
+            <div>
+              <div class="qualifiers-list" style="background: var(--paper);">
+                <h4>Parejas generadas (1º grupo + 2º grupo)</h4>
+                <div class="pairings" id="pairings-list"></div>
+                <div style="margin-top: 16px; padding: 12px; background: var(--cream-2); border-radius: var(--r); font-size: 12px; color: var(--ink-2); display:flex; gap:10px;">
+                  <span style="font-size:16px;">💡</span>
+                  <span>El sistema empareja 1º y 2º del mismo grupo, y los cruza por seeding (1 vs 8, 2 vs 7…). Puedes regenerar si quieres otro emparejamiento.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer wrap">
+    <div>ROLAND GARRULOS '26 · Club Pádel La Boleadora</div>
+    <div>Organiza: Comité Tertulia &amp; Tortilla</div>
+  </footer>
+
+  <!-- ==================== MOBILE NAV ==================== -->
+  <nav class="nav-mobile">
+    <a href="#home" data-screen="home" class="active">
+      <span class="icon"><span class="dot"></span></span>
+      <span>Inicio</span>
+    </a>
+    <a href="#grupos" data-screen="grupos">
+      <span class="icon"><span class="dot"></span></span>
+      <span>Grupos</span>
+    </a>
+    <a href="#cuadro" data-screen="cuadro">
+      <span class="icon"><span class="dot"></span></span>
+      <span>Cuadro</span>
+    </a>
+    <a href="#stats" data-screen="stats">
+      <span class="icon"><span class="dot"></span></span>
+      <span>Stats</span>
+    </a>
+    <a href="#admin" data-screen="admin">
+      <span class="icon"><span class="dot"></span></span>
+      <span>Admin</span>
+    </a>
+  </nav>
+
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

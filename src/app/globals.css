@@ -1,49 +1,332 @@
+/* ============================================================
+   ROLAND GARRULOS — Design System
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --cream: #f4efe2;
+  --cream-2: #ebe4d2;
+  --paper: #fbf8f0;
+  --ink: #0c1f1a;
+  --ink-2: #324a44;
+  --ink-3: #6b7d78;
+  --line: rgba(12, 31, 26, 0.12);
+  --line-2: rgba(12, 31, 26, 0.06);
+
+  --court: #1d4e89;
+  --court-2: #163d6c;
+  --court-soft: #d9e4f1;
+
+  --green: #1f6b3a;
+  --green-2: #16542c;
+  --green-soft: #d6e7d8;
+
+  --ball: #d4e84a;
+  --ball-2: #c5db2d;
+
+  --rust: #b8453a;
+
+  --r-sm: 6px;
+  --r: 12px;
+  --r-lg: 18px;
+  --r-xl: 28px;
+
+  --shadow-1: 0 1px 0 rgba(12, 31, 26, 0.04), 0 2px 6px rgba(12, 31, 26, 0.04);
+  --shadow-2: 0 10px 30px -10px rgba(12, 31, 26, 0.18);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 a {
   color: inherit;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.row.wrap-flex {
+  flex-wrap: wrap;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.muted {
+  color: var(--ink-3);
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+.h-eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.h-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ============================================================
+   TAG / PILL
+   ============================================================ */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-family: var(--font-mono), monospace;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: var(--cream-2);
+  color: var(--ink-2);
+  text-transform: uppercase;
+}
+
+.tag.green {
+  background: var(--green-soft);
+  color: var(--green-2);
+}
+
+.tag.blue {
+  background: var(--court-soft);
+  color: var(--court-2);
+}
+
+.tag.ball {
+  background: var(--ball);
+  color: var(--ink);
+}
+
+.tag.rust {
+  background: #f5dad6;
+  color: var(--rust);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 14px;
+  transition: transform 0.1s;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.btn.ball {
+  background: var(--ball);
+  color: var(--ink);
+}
+
+.btn.danger {
+  background: var(--rust);
+  color: white;
+}
+
+.btn.sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 20px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.card-head h3 {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SCREEN HEADINGS
+   ============================================================ */
+
+.screen-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.screen-head h1 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -0.03em;
+  margin: 8px 0 0;
+  line-height: 0.95;
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+main {
+  padding: 32px 0 64px;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-3);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    padding-bottom: 100px;
   }
+  main {
+    padding-bottom: 80px;
+  }
+}
+
+/* ============================================================
+   FORM FIELDS
+   ============================================================ */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 14px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  color: var(--ink);
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--ball);
+  outline-offset: 1px;
+  border-color: transparent;
 }

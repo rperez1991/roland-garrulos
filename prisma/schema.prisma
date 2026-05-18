@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  id        Int      @id @default(autoincrement())
+  name      String
+  surname   String
+  nick      String
+  group     String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Match {
+  id        Int      @id @default(autoincrement())
+  phase     String
+  round     Int      @default(1)
+  group     String?
+  playerA1  Int
+  playerA2  Int
+  playerB1  Int
+  playerB2  Int
+  sets      String?
+  winner    String?
+  court     String?
+  date      String?
+  live      Boolean  @default(false)
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

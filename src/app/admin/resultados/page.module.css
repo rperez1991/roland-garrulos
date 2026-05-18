@@ -1,0 +1,126 @@
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sectionHead h2 {
+  margin: 0;
+  font-family: var(--font-display), system-ui, sans-serif;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.select {
+  padding: 8px 12px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--ink);
+}
+
+.editor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.resultRow {
+  display: grid;
+  grid-template-columns: 60px 1fr auto 1fr 60px;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+}
+
+.roundTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.pair {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.pair small {
+  display: block;
+  color: var(--ink-3);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pairRight {
+  text-align: right;
+}
+
+.scoreInput {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.scoreInput input {
+  width: 42px;
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 6px 4px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.saved {
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  color: var(--green-2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.syncBanner {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--green-soft);
+  border: 1px solid var(--green);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--green-2);
+}
+
+@media (max-width: 700px) {
+  .resultRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .roundTag {
+    justify-self: start;
+  }
+  .pairRight {
+    text-align: left;
+  }
+  .scoreInput {
+    justify-self: start;
+  }
+}
