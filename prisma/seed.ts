@@ -1,6 +1,12 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaLibSQL } from "@prisma/adapter-libsql";
 
-const prisma = new PrismaClient();
+const adapter = new PrismaLibSQL({
+  url: process.env.DATABASE_URL ?? "file:./dev.db",
+  authToken: process.env.DATABASE_AUTH_TOKEN,
+});
+
+const prisma = new PrismaClient({ adapter });
 
 // 8 parejas fijas, 16 jugadores. Grupo A (parejas 1-4), Grupo B (parejas 5-8)
 const PLAYERS = [
