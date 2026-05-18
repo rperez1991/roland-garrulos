@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { MatchDisplay } from "@/lib/data";
-import { shortName, pairNumber, fullPairName } from "@/lib/data";
+import { pairNumber, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 
 type Props = {

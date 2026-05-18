@@ -1,9 +1,9 @@
-import { loadPlayers, getGroupStandings, getGroupMatches, fullPairName, pairNumber } from "@/lib/data";
+import { loadPlayers, getGroupMatches, fullPairName, pairNumber } from "@/lib/data";
 import AdminShell from "@/components/AdminShell";
 import styles from "./page.module.css";
 
 export default async function AdminResultadosPage() {
-  const players = await loadPlayers();
+  await loadPlayers();
   const groups = ["A", "B"];
   const matchesData: Record<string, Awaited<ReturnType<typeof getGroupMatches>>> = {};
   for (const g of groups) {

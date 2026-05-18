@@ -1,8 +1,8 @@
-import { loadPlayers, getPairStats, fullPairName, shortPairName } from "@/lib/data";
+import { loadPlayers, getPairStats, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 
 export default async function StatsPage() {
-  const players = await loadPlayers();
+  await loadPlayers();
   const stats = await getPairStats();
 
   const byWins = [...stats].sort((a, b) => b.wins - a.wins);

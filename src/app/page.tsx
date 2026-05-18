@@ -1,9 +1,9 @@
-import { loadPlayers, getFinalMatches, pairShort, shortName } from "@/lib/data";
+import { loadPlayers, getFinalMatches, pairShort } from "@/lib/data";
 import styles from "./page.module.css";
 import Link from "next/link";
 
 export default async function Home() {
-  const players = await loadPlayers();
+  await loadPlayers();
   const finals = await getFinalMatches();
 
   const upcoming = finals.map((m) => ({

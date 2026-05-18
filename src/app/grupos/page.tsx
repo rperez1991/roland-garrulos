@@ -1,9 +1,9 @@
-import { loadPlayers, getGroupStandings, getGroupMatches, getPlayer, fullPairName, pairNumber } from "@/lib/data";
+import { loadPlayers, getGroupStandings, getGroupMatches, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 import { GroupRounds } from "./GroupRounds";
 
 export default async function GruposPage() {
-  const players = await loadPlayers();
+  await loadPlayers();
   const groups = ["A", "B"];
 
   const standingsData: Record<string, Awaited<ReturnType<typeof getGroupStandings>>> = {};

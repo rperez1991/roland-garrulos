@@ -1,12 +1,13 @@
-import { loadPlayers, getPlayerMatches, fullName, fullPairName, pairNumber, getPlayer } from "@/lib/data";
+import { loadPlayers, getPlayerMatches, pairNumber, getPlayer } from "@/lib/data";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default async function PerfilPage({
   searchParams,
 }: {
   searchParams: Promise<{ id?: string; pair?: string }>;
 }) {
-  const { id, pair: pairParam } = await searchParams;
+  const { id } = await searchParams;
   const players = await loadPlayers();
   const playerId = parseInt(id || "1");
   const player = getPlayer(playerId);
@@ -15,7 +16,7 @@ export default async function PerfilPage({
     return (
       <div style={{ padding: "40px 0", textAlign: "center" }}>
         <h1 style={{ fontFamily: "var(--font-display)" }}>Jugador no encontrado</h1>
-        <a href="/" className="btn">Volver</a>
+        <Link href="/" className="btn">Volver</Link>
       </div>
     );
   }

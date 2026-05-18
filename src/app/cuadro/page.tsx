@@ -1,8 +1,8 @@
-import { loadPlayers, getFinals, pairShort, fullPairName } from "@/lib/data";
+import { loadPlayers, getFinals, fullPairName } from "@/lib/data";
 import styles from "./page.module.css";
 
 export default async function CuadroPage() {
-  const players = await loadPlayers();
+  await loadPlayers();
   const finals = await getFinals();
 
   if (finals.length === 0) {
@@ -32,7 +32,6 @@ export default async function CuadroPage() {
       <div className={styles.grid}>
         {finals.map((m, i) => {
           const isWinner = (side: string) => m.winner === side;
-          const labels = ["🏆 Campeón", "🥈 Subcampeón", "", ""];
           const courts = ["Pista 1", "Pista 2", "Pista 3", "Pista 4"];
 
           return (
